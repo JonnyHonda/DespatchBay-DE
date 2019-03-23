@@ -1,7 +1,18 @@
 ﻿<?xml version='1.0' encoding='utf-8'?>
-<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)">
-  <Profiles>
-    <Profile Name="(Default)" />
-  </Profiles>
-  <Settings />
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="DespatchBay_DE.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="DespatchBay_DE_com_despatchbay_api_account_AccountService" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://api.despatchbay.com/soap/v15/account.php</Value>
+    </Setting>
+    <Setting Name="DespatchBay_DE_com_despatchbay_api_addressing_AddressingService" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://api.despatchbay.com/soap/v15/addressing.php</Value>
+    </Setting>
+    <Setting Name="DespatchBay_DE_com_despatchbay_api_shipping_ShippingService" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://api.despatchbay.com/soap/v15/shipping.php</Value>
+    </Setting>
+    <Setting Name="DespatchBay_DE_com_despatchbay_api_tracking_TrackingService" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://api.despatchbay.com/soap/v15/tracking.php</Value>
+    </Setting>
+  </Settings>
 </SettingsFile>

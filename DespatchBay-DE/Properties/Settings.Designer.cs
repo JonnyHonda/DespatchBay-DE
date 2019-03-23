@@ -8,22 +8,58 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace DespatchBay_DE.Properties
-{
-
-
+namespace DespatchBay_DE.Properties {
+    
+    
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Editors.SettingsDesigner.SettingsSingleFileGenerator", "11.0.0.0")]
-    internal sealed partial class Settings : global::System.Configuration.ApplicationSettingsBase
-    {
-
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Editors.SettingsDesigner.SettingsSingleFileGenerator", "15.9.0.0")]
+    internal sealed partial class Settings : global::System.Configuration.ApplicationSettingsBase {
+        
         private static Settings defaultInstance = ((Settings)(global::System.Configuration.ApplicationSettingsBase.Synchronized(new Settings())));
-
-        public static Settings Default
-        {
-            get
-            {
+        
+        public static Settings Default {
+            get {
                 return defaultInstance;
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.WebServiceUrl)]
+        [global::System.Configuration.DefaultSettingValueAttribute("http://api.despatchbay.com/soap/v15/account.php")]
+        public string DespatchBay_DE_com_despatchbay_api_account_AccountService {
+            get {
+                return ((string)(this["DespatchBay_DE_com_despatchbay_api_account_AccountService"]));
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.WebServiceUrl)]
+        [global::System.Configuration.DefaultSettingValueAttribute("http://api.despatchbay.com/soap/v15/addressing.php")]
+        public string DespatchBay_DE_com_despatchbay_api_addressing_AddressingService {
+            get {
+                return ((string)(this["DespatchBay_DE_com_despatchbay_api_addressing_AddressingService"]));
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.WebServiceUrl)]
+        [global::System.Configuration.DefaultSettingValueAttribute("http://api.despatchbay.com/soap/v15/shipping.php")]
+        public string DespatchBay_DE_com_despatchbay_api_shipping_ShippingService {
+            get {
+                return ((string)(this["DespatchBay_DE_com_despatchbay_api_shipping_ShippingService"]));
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.WebServiceUrl)]
+        [global::System.Configuration.DefaultSettingValueAttribute("http://api.despatchbay.com/soap/v15/tracking.php")]
+        public string DespatchBay_DE_com_despatchbay_api_tracking_TrackingService {
+            get {
+                return ((string)(this["DespatchBay_DE_com_despatchbay_api_tracking_TrackingService"]));
             }
         }
     }
