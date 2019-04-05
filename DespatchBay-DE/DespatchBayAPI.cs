@@ -2,7 +2,7 @@
 using DespatchBay_DE.com.despatchbay.api.addressing;
 using DespatchBay_DE.com.despatchbay.api.shipping;
 using DespatchBay_DE.com.despatchbay.api.tracking;
-
+using SQLite;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -75,6 +75,7 @@ namespace DespatchBay_DE
             return netCredential.GetCredential(uri, "Basic");
         }
 
+        
     }
 
 

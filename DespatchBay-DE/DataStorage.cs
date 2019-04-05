@@ -22,10 +22,12 @@ namespace DespatchBay_DE
         public string AccountName { get; set; }
         public double Balance { get; set; }
         public double AvailableBalance { get; set; }
+        public string CreatedDateTime { get; set; }
+        public string UpdatedDateTime { get; set; }
 
         public override string ToString()
         {
-            return string.Format("[Account: ID={0}, AccountID={1}, AccountName={2}, Balance={3}, AvailableBalance={4}]", ID, AccountID, AccountName, Balance, AvailableBalance);
+            return string.Format("[Account: ID={0}, AccountID={1}, AccountName={2}, Balance={3}, AvailableBalance={4}, CreatedDateTime={5}, UpdatedDateTime={6}]", ID, AccountID, AccountName, Balance, AvailableBalance, CreatedDateTime, UpdatedDateTime);
         }
 
     }
@@ -39,15 +41,15 @@ namespace DespatchBay_DE
         [AutoIncrement]
         public int ID { get; set; } // an auto increment data base ID
         public int ExternalID { get; set; } // the id as storded in the external system
-        public int SenderAddressID { get; set; } // the sender drress id in despatch bay
-        public int AddressID { get; set; } // our internal id of the address
+       // public int SenderAddressID { get; set; } // the sender drress id in despatch bay
+       // public int AddressID { get; set; } // our internal id of the address
         public string SenderName { get; set; }
         public string SenderTelephone { get; set; }
         public string SenderEmail { get; set; }
 
         public override string ToString()
         {
-            return string.Format("[SenderAddress: ID={0}, ExternalID={1}, SenderAddressID={2}, AddressID={3}, SenderName={4}, SenderTelephone={5},  SenderEmail={6}]", ID, ExternalID, SenderAddressID, AddressID, SenderName, SenderTelephone, SenderEmail);
+            return string.Format("[SenderAddress: ID={0}, ExternalID={1}, SenderName={2}, SenderTelephone={3},  SenderEmail={4}]", ID, ExternalID, SenderName, SenderTelephone, SenderEmail);
         }
     }
 
@@ -57,8 +59,7 @@ namespace DespatchBay_DE
     public class AddressService
     {
         [PrimaryKey]
-        [AutoIncrement]
-        public int ID { get; set; } // an auto increment data base ID
+        public int ID { get; set; } // an auto increment data base ID - the External ID in SenderAddress
         public string CompanyName { get; set; }
         public string Street { get; set; }
         public string Locality { get; set; }
@@ -72,4 +73,52 @@ namespace DespatchBay_DE
         }
     }
 
+    public class DespatchBayCredentials{
+        [PrimaryKey]
+        [AutoIncrement]
+        public int ID { get; set; } // an auto increment data base ID
+        public string ApiUser { get; set; }
+        public string ApiKey { get; set; }
+        public bool IsEnabled { get; set; }
+        public string CreatedDateTime { get; set; }
+        public string UpdatedDateTime { get; set; }
+
+        public override string ToString()
+        {
+            return string.Format("[DespatchBayCredentials: ID={0}, ApiUser={1}, ApiKey={2}, IsEnabled={3}, CreatedDateTime={4}, UpdatedDateTime={5}]", ID, ApiUser, ApiKey, IsEnabled, CreatedDateTime, UpdatedDateTime);
+        }
+    }
+
+
+    public class Service
+    {
+        [PrimaryKey]
+        [AutoIncrement]
+        public int ID { get; set; } // an auto increment data base ID
+
+        [Unique]
+        public int ServiceID { get; set; }
+        public string Format { get; set; }
+        public string Name { get; set; }
+        public double Cost { get; set; }
+        public string CourierID { get; set; } // ID Courier in this database and Despatch BAY
+        public string CreatedDateTime { get; set; }
+        public string UpdatedDateTime { get; set; }
+
+        public override string ToString()
+        {
+            return string.Format("[Service: ID={0}, ServiceID={1}, Format={2}, Name={3}, Cost={4}, CourierID={5}, CreatedDateTime={6}, UpdatedDateTime={7}]", ID, ServiceID, Format, Name, Cost, CourierID, CreatedDateTime, UpdatedDateTime);
+        }
+    }
+
+    public class Courier
+    {
+        [PrimaryKey]
+        [Unique]
+        // public int ID { get; set; } // an auto increment database ID
+        public string CourierID { get; set; } // the ID in DespatchBay
+        public string CourierName { get; set; }
+        public string CreatedDateTime { get; set; }
+        public string UpdatedDateTime { get; set; }
+    }
 }
